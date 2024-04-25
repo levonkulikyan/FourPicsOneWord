@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100wv;
+    height: 100vh;
+    background-image: linear-gradient(rgb(157, 221, 239),rgb(93, 167, 228),rgb(67, 137, 194), rgb(255, 255, 255));
+}
+
+header{
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgb(157, 156, 156);
+}
+
+header h1{
+    font-family: "Anta", sans-serif;
+}
+
+main{
+    text-align: center;
+
+}
+
+ul{
+    
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+li{
+    padding: 10px;;
+}
+li a,
+li a:visited{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    text-decoration: none;
+    color: black;
+   
+}
+
+li a:hover{
+    text-shadow: 1px 1px 20px rgb(255, 255, 255);
+    letter-spacing: 0.5px;
+   
+    
+}
+
+
+
+
+
+
+

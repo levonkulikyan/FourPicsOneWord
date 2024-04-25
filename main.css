@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./images/pexels-photo-8159115.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(255, 255, 255);
+}
+
+.main-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-live-info {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    row-gap: 10px;
+    font-family: "Honk", system-ui;
+}
+
+.game-live-info p {
+    font-size: 4rem;
+    color: #F8F8FF;
+    text-shadow: -10px 5px 7px rgb(0, 0, 0);
+}
+
+.image-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    width: auto;
+    height: auto;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(1, 50% 50%);
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 2%;
+    box-shadow: 0 10px 90px 10px rgba(0, 0, 0, 0.512), 0 45px 26px rgba(9, 9, 9, 0.547);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    max-width: 100%;
+    min-height: 100%;
+    border-radius: 2%;
+    border: 1px solid rgb(18, 18, 18);
+    transition: 1s all;
+    padding: 2px;
+}
+
+#inputs {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    text-align: center;
+    transition: 2s all;
+}
+
+input {
+    width: 80px;
+    height: 80px;
+    max-width: 100x;
+    max-height: 100px;
+    font-size: 80px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 20%;
+    font-family: "Honk", system-ui;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+    cursor: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #03742481;
+    padding: 20px;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: 40%;
+    min-height: 250px;
+}
+
+.modal-content h1,
+p,
+a {
+    text-align: center;
+}
+
+.modal-content a,
+a:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2rem;
+}
+
+.close-btn {
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    font-weight: bold;
+    align-self: flex-end;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* The Close Button */
+
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 481px) {
+    body {
+        height: 100vh;
+        /* 100% of the viewport height */
+        overflow: hidden;
+        /* Disable scrolling */
+    }
+
+    .main-content {
+        height: auto;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(180deg, rgba(2, 0, 36, 1) 27%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .game-live-info {
+        width: 65%;
+        min-width: 5%;
+        font-family: Arial;
+
+    }
+
+    .game-live-info p {
+        font-size: 1.1rem;
+        color: #ffffff;
+        text-shadow: -10px 5px 7px rgb(0, 0, 0);
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .game-live-info img {
+        width: 25px;
+        height: 28px;
+    }
+
+    .image-container {
+        width: 65%;
+        /* Adjust width for smartphones */
+        height: auto;
+    }
+
+    .image-container img {
+        width: 280px;
+        height: auto;
+    }
+
+    #inputs {
+        margin-top: 10px;
+    }
+
+    input {
+        width: 8.5vw;
+        /* Adjust input width for smartphones */
+        height: 8.5vw;
+        font-size: 25px;
+        /* Adjust font size for smartphones */
+        font-family: "Chakra Petch", sans-serif;
+        background-color: #f8f8ffc7;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.45) inset;
+        cursor: auto;
+
+    }
+
+    .modal-content {
+        width: 80%;
+        /* Adjust modal width for smartphones */
+
+        display: flex;
+        color: #F8F8FF;
+        border-radius: 2%;
+        border: black;
+
+    }
+
+}
+
+
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+ 
+    body {
+        height: 100vh;
+        /* 100% of the viewport height */
+        overflow: hidden;
+        /* Disable scrolling */
+    }
+
+    .main-content {
+      
+        background: rgb(2, 0, 36);
+        background: linear-gradient(180deg, rgba(2, 0, 36, 1) 27%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .game-live-info {
+        width: 80%;
+        max-width: 500px;
+      
+        font-family: Arial;
+
+    }
+
+    .game-live-info p {
+        font-size: 1.8rem;
+        color: #ffffff;
+        text-shadow: -10px 5px 7px rgb(0, 0, 0);
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .game-live-info img {
+        width: 40px;
+        height: 40px;
+     
+    }
+
+    .image-container {
+        max-height: 90vh;
+        width: auto;
+        max-width: 80%;
+        /* Adjust width for smartphones */
+    
+    }
+
+    .image-container img {
+        max-width: 250px;
+        height: auto;
+    }
+
+    #inputs {
+        margin-top: 10px;
+    }
+
+    input {
+        width: 60px;
+     
+        /* Adjust input width for smartphones */
+        height: 60px;
+        font-size: 25px;
+        /* Adjust font size for smartphones */
+        font-family: "Chakra Petch", sans-serif;
+        background-color: #f8f8ffc7;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.45) inset;
+        cursor: auto;
+
+    }
+
+    .modal-content {
+        width: 80%;
+        display: flex;
+        color: #F8F8FF;
+        border-radius: 2%;
+        border: black;
+    }
+
+
+
+}
+
+
+
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+ 
+    body {
+        height: 100vh;
+        /* 100% of the viewport height */
+        overflow: hidden;
+        /* Disable scrolling */
+    }
+
+    .main-content {
+      
+        background: rgb(2, 0, 36);
+        background: linear-gradient(180deg, rgba(2, 0, 36, 1) 27%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .game-live-info {
+        width: 80%;
+        max-width: 500px;
+      
+        font-family: Arial;
+
+    }
+
+    .game-live-info p {
+        font-size: 1.8rem;
+        color: #ffffff;
+        text-shadow: -10px 5px 7px rgb(0, 0, 0);
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .game-live-info img {
+        width: 40px;
+        height: 40px;
+     
+    }
+
+    .image-container {
+        max-height: 90vh;
+        width: auto;
+        max-width: 80%;
+        /* Adjust width for smartphones */
+    
+    }
+
+    .image-container img {
+        max-width: 250px;
+        height: auto;
+    }
+
+    #inputs {
+        margin-top: 10px;
+    }
+
+    input {
+        width: 80px;
+        /* Adjust input width for smartphones */
+        height: 80px;
+        font-size: 25px;
+        /* Adjust font size for smartphones */
+        font-family: "Chakra Petch", sans-serif;
+        background-color: #f8f8ffc7;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.45) inset;
+        cursor: auto;
+
+    }
+
+    .modal-content {
+        width: 80%;
+        display: flex;
+        color: #F8F8FF;
+        border-radius: 2%;
+        border: black;
+    }
+
+
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+    body {
+        height: 100vh;
+        /* 100% of the viewport height */
+        overflow: hidden;
+        /* Disable scrolling */
+    }
+
+    .main-content {
+        
+        background: rgb(2, 0, 36);
+        background: linear-gradient(180deg, rgba(2, 0, 36, 1) 27%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .game-live-info {
+        width: 80%;
+        max-width: 500px;
+      
+        font-family: Arial;
+
+    }
+
+    .game-live-info p {
+        font-size: 1.8rem;
+        color: #ffffff;
+        text-shadow: -10px 5px 7px rgb(0, 0, 0);
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .game-live-info img {
+        width: 40px;
+        height: 40px;
+     
+    }
+
+    .image-container {
+        max-height: 70vh;
+        width: auto;
+        max-width: 80%;
+        /* Adjust width for smartphones */
+    
+    }
+
+    .image-container img {
+        max-width: 250px;
+        height: auto;
+    }
+
+    #inputs {
+        margin-top: 10px;
+    }
+
+    input {
+        width: 60px;
+        /* Adjust input width for smartphones */
+        height: 60px;
+        font-size: 25px;
+        /* Adjust font size for smartphones */
+        font-family: "Chakra Petch", sans-serif;
+        background-color: #f8f8ffc7;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.45) inset;
+        cursor: auto;
+
+    }
+
+    .modal-content {
+        width: 80%;
+        display: flex;
+        color: #F8F8FF;
+        border-radius: 2%;
+        border: black;
+    }
+
+
+
+}
